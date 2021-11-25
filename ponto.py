@@ -1,5 +1,4 @@
 from datetime import timedelta
-from data_hora import DataHora
 
 class Ponto:
     def __init__(self, data, entrada, saida_almoco, entrada_almoço, saida):
