@@ -14,7 +14,7 @@ class Menu():
             self.one(db)
             return
         if opcao == "2":
-            self.two(opcao)
+            self.two(opcao, db)
             return
         if opcao == "3":
             self.three(opcao)
@@ -78,16 +78,15 @@ def opcao_registro():
         item = int(input("Qual você deseja registrar: "))
     except:
         clear_console()
-        print("Valor inválido!")
-        print("Cancelando... \n")
+        print("[WARNING] - Essa opção não é existe. Cancelando... \n")
         return
     else:
         if item - 1 in range(4):
             clear_console()
-            return item-1
+            return item - 1
         else:
             clear_console()
-            print("Cancelando... \n")
+            print("Saindo... \n")
             return
 
 def set_data():
@@ -101,7 +100,7 @@ def set_data():
     return data
 
 def set_horas(key):
-    print("### Agora informe o horário ###")
+    print("### Informe o horário ###")
     horario = {}
     print(key.capitalize())
     hora = input("Hora: ")
